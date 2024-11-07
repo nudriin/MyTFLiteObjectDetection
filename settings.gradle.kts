@@ -12,5 +12,5 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "MyTFLiteImageClassification"
+rootProject.name = "MyTFLiteObjectDetection"
 include(":app")
