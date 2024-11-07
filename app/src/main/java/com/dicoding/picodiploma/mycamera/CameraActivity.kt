@@ -49,7 +49,12 @@ class CameraActivity : AppCompatActivity() {
                     }
                 }
 
-                override fun onResults(results: MutableList<Detection>?, inferenceTime: Long) {
+                override fun onResults(
+                    results: MutableList<Detection>?,
+                    inferenceTime: Long,
+                    imageHeight: Int,
+                    imageWidth: Int
+                ) {
                     runOnUiThread {
                         results?.let {it ->
                             if(it.isNotEmpty() && it[0].categories.isNotEmpty()){
