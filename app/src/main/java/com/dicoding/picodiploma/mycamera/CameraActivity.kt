@@ -68,18 +68,14 @@ class CameraActivity : AppCompatActivity() {
 
                                     builder.append("$displayResult \n")
                                 }
-
-                                val sortedCategories =
-                                    it[0].categories.sortedByDescending { it?.score }
-
-                                binding.tvResult.text = builder.toString()
+                                binding.overlay.setResults(results, imageHeight, imageWidth)
                                 binding.tvInferenceTime.text = "$inferenceTime ms"
                             } else {
-                                binding.tvResult.text = ""
+                                binding.overlay.clear()
                                 binding.tvInferenceTime.text = ""
                             }
-
                         }
+                        binding.overlay.invalidate()
                     }
                 }
             }
